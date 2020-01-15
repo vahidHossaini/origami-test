@@ -23,8 +23,23 @@ module.exports = [
         'type': 'captcha',
         'isNpm': true,
         'config': {
-            'context': '',
-            'attach': {}
+            driver: {
+                name: 'simple',
+                length: 5
+            }
         }
+    },
+    {
+        'id': '3ec70b5a-1073-4077-9bbc-cb2e70542148',
+        'name': 'service',
+        'context': '{databse connection name }',
+        'domain': 'captchatest',
+        'driver': global.path + '/services/captchatest/index.js',
+        'structure': global.path + '/services/captchatest/struct.js',
+        'funcs': [{
+                'name': 'test',
+                'title': 'test'
+            }],
+        'auth': ['test']
     }
 ];

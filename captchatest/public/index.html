@@ -1,0 +1,40 @@
+
+
+<img id="imageid" />
+<input id="inputId" />
+<button onclick="checkId()" > 
+Check
+</button >
+<script>
+function httpGet(theUrl)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    return JSON.parse( xmlHttp.responseText);
+}
+var id ={} 
+var reloadImage=function()
+{
+id=httpGet('/captcha/get')
+document.getElementById('imageid')
+    .setAttribute(
+        'src', 'data:image/png;base64,'+id.data.image
+    );
+}
+reloadImage()
+	var checkId=function()
+	{
+		var resp = httpGet('/captcha/set?id='+id.data.id+'&code='+document.getElementById('inputId').value)
+		 
+		console.log('resp',resp)
+		if(resp.data.accept)
+		{
+			var r = httpGet('/captchatest/test?id='+id.data.id)
+		}
+		else
+		{
+		reloadImage()
+		}
+	}
+</script>

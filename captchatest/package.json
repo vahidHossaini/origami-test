@@ -4,6 +4,7 @@
   "main": "index.js",
   "bin": "./index.js",
   "dependencies": {
+    "captchapng": "0.0.1",
     "express": "^4.17.1",
     "formidable": "^1.2.1",
     "oricaptcha": "0.0.6",
