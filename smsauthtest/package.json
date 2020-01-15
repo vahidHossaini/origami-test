@@ -1,0 +1,13 @@
+{
+  "name": "smsauthtest",
+  "description": "sms authentication test",
+  "main": "index.js",
+  "bin": "./index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "formidable": "^1.2.1",
+    "oriendpoint": "0.0.11",
+    "origamicore": "^2.0.12",
+    "uuid": "^3.3.3"
+  }
+}
