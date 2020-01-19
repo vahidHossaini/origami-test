@@ -1,0 +1,32 @@
+<html>
+<script>
+function httpGet(theUrl)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    return JSON.parse( xmlHttp.responseText);
+}
+
+var sendPhone = function()
+{
+	var resp = httpGet('/smsauth/login?phone='+document.getElementById('phoneId').value)
+}
+
+var sendCode = function()
+{
+	var resp = httpGet('/smsauth/verify?phone='+document.getElementById('phoneId').value+'&code='+document.getElementById('codeId').value)
+}
+</script>
+
+phone number is :
+<input id="phoneId"/>
+<button onclick="sendPhone()"> send
+</button>
+<br/>
+code is :
+<input id="codeId"/>
+<button onclick="sendCode()"> send
+</button>
+<br/>
+</html>
