@@ -1,0 +1,17 @@
+{
+  "name": "wallettest",
+  "description": "wallettest",
+  "main": "index.js",
+  "bin": "./index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "formidable": "^1.2.1",
+    "mongodb": "^3.3.5",
+    "odata-v4-parser": "^0.1.29",
+    "oridatabase": "0.0.6",
+    "oriendpoint": "0.0.11",
+    "origamicore": "^2.0.12",
+    "oriwallet": "0.0.2",
+    "uuid": "^3.3.3"
+  }
+}
